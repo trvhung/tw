@@ -1,769 +1,1136 @@
 <header class="relative top-0 z-50 flex h-12 w-full items-center justify-between border-b border-gray-700 px-4 text-white">
-  <div class="flex items-center">
-    <button aria-expanded="false" class="mr-3 inline-flex items-center justify-center rounded-lg text-gray-400 outline-blue-500 transition duration-150 ease-in-out hover:text-blue-200 focus-visible:outline-2 lg:hidden" aria-controls="leftSidebar" aria-label="Toggle sidebar">
-      <svg class="h-8 w-8" aria-hidden="true" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" fill="none">
-        <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM9 4v16"></path>
-        <path d="m14 10 2 2-2 2"></path>
-        <path class="hidden" d="m15 10-2 2 2 2"></path>
-      </svg>
-    </button>
-
-    <a title="Game Servers List, Stats, Banners and Search" href="https://playbase.pro/en">
-      <picture>
-        <source media="(max-width: 600px)" srcset="https://playbase.pro/storage/branding/hex.svg" />
-        <source srcset="https://playbase.pro/storage/branding/playbase_white.svg" />
-        <img alt="playbase logo" src="https://playbase.pro/storage/branding/playbase_white.svg" class="h-8" />
-      </picture>
-    </a>
-  </div>
-
-  <form class="mb-0 hidden md:block" action="https://playbase.pro/en/search" role="search">
-    <input class="rounded-xl bg-white/10 py-1 text-center text-white placeholder:text-gray-300 focus:outline-none focus:ring focus:ring-blue-300 md:w-[23em] xl:w-[40em]" aria-label="Server search" placeholder="Server search" name="query" id="query" type="search" />
-  </form>
-
-  <div class="flex items-center md:order-2">
-    <div class="relative mr-2">
-      <div>
-        <button data-umami-event="lang-switch" class="rounded-lg p-2 text-blue-300 hover:bg-white/10 hover:text-blue-200 focus:outline-none" data-tippy-placement="bottom" data-tippy-content="Language" aria-label="Language">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" class="h-6 w-6 stroke-current stroke-2">
-            <circle r="9" cy="12" cx="12"></circle>
-            <path d="M4 9h16M4 15h16M12 3a17 17 0 000 18M13 3a17 17 0 010 18"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div style="display: none" class="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-lg shadow-lg">
-        <div class="rounded-lg border border-white/10 bg-[#212330] p-1">
-          <a rel="alternate" hreflang="en" href="https://playbase.pro/en" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1fa-1f1f8.png" alt="🇺🇸" class="emoji" draggable="false" />
-            <span class="ml-2">English</span>
-          </a>
-          <a rel="alternate" hreflang="fr" href="https://playbase.pro/fr" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1eb-1f1f7.png" alt="🇫🇷" class="emoji" draggable="false" />
-            <span class="ml-2">Français</span>
-          </a>
-          <a rel="alternate" hreflang="ru" href="https://playbase.pro/ru" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1f7-1f1fa.png" alt="🇷🇺" class="emoji" draggable="false" />
-            <span class="ml-2">русский</span>
-          </a>
-          <a rel="alternate" hreflang="es" href="https://playbase.pro/es" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1ea-1f1f8.png" alt="🇪🇸" class="emoji" draggable="false" />
-            <span class="ml-2">español</span>
-          </a>
-          <a rel="alternate" hreflang="cs" href="https://playbase.pro/cs" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1e8-1f1ff.png" alt="🇨🇿" class="emoji" draggable="false" />
-            <span class="ml-2">Čeština</span>
-          </a>
-          <a rel="alternate" hreflang="de" href="https://playbase.pro/de" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1e9-1f1ea.png" alt="🇩🇪" class="emoji" draggable="false" />
-            <span class="ml-2">Deutsch</span>
-          </a>
-          <a rel="alternate" hreflang="pl" href="https://playbase.pro/pl" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1f5-1f1f1.png" alt="🇵🇱" class="emoji" draggable="false" />
-            <span class="ml-2">Polski</span>
-          </a>
-          <a rel="alternate" hreflang="uk" href="https://playbase.pro/uk" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
-            <img src="https://playbase.pro/storage/emoji/72x72/1f1fa-1f1e6.png" alt="🇺🇦" class="emoji" draggable="false" />
-            <span class="ml-2">Українська</span>
-          </a>
-
-          <hr class="my-1 border-gray-700" />
-
-          <a rel="nofollow" title="crowdin" href="https://weblate.riko.dev/projects/playbase/" class="flex w-full items-center justify-center rounded bg-green-700 px-4 py-2 text-sm text-gray-200 transition hover:bg-green-600 hover:bg-white/5 focus:bg-gray-600 focus:bg-green-600 focus:outline-none"> Translate in Weblate </a>
-        </div>
-      </div>
-    </div>
-
     <div class="flex items-center">
-      <a class="umami--click--login-button rounded-lg bg-blue-700 px-4 py-1 hover:bg-blue-600" href="/login">
-        <span class="font-black text-white">Log In</span>
-      </a>
+        <button
+            aria-expanded="false"
+            class="mr-3 inline-flex items-center justify-center rounded-lg text-gray-400 outline-blue-500 transition duration-150 ease-in-out hover:text-blue-200 focus-visible:outline-2 lg:hidden"
+            aria-controls="leftSidebar"
+            aria-label="Toggle sidebar"
+        >
+            <svg class="h-8 w-8" aria-hidden="true" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" fill="none">
+                <path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM9 4v16"></path>
+                <path d="m14 10 2 2-2 2"></path>
+                <path class="hidden" d="m15 10-2 2 2 2"></path>
+            </svg>
+        </button>
+
+        <a title="Game Servers List, Stats, Banners and Search" href="https://playbase.pro/en">
+            <picture>
+                <source media="(max-width: 600px)" srcset="https://playbase.pro/storage/branding/hex.svg" />
+                <source srcset="https://playbase.pro/storage/branding/playbase_white.svg" />
+                <img alt="playbase logo" src="https://playbase.pro/storage/branding/playbase_white.svg" class="h-8" />
+            </picture>
+        </a>
     </div>
-  </div>
+
+    <form class="mb-0 hidden md:block" action="https://playbase.pro/en/search" role="search">
+        <input
+            class="rounded-xl bg-white/10 py-1 text-center text-white placeholder:text-gray-300 focus:outline-none focus:ring focus:ring-blue-300 md:w-[23em] xl:w-[40em]"
+            aria-label="Server search"
+            placeholder="Server search"
+            name="query"
+            id="query"
+            type="search"
+        />
+    </form>
+
+    <div class="flex items-center md:order-2">
+        <div class="relative mr-2">
+            <div>
+                <button data-umami-event="lang-switch" class="rounded-lg p-2 text-blue-300 hover:bg-white/10 hover:text-blue-200 focus:outline-none" data-tippy-placement="bottom" data-tippy-content="Language" aria-label="Language">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" class="h-6 w-6 stroke-current stroke-2">
+                        <circle r="9" cy="12" cx="12"></circle>
+                        <path d="M4 9h16M4 15h16M12 3a17 17 0 000 18M13 3a17 17 0 010 18"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <div style="display: none;" class="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-lg shadow-lg">
+                <div class="rounded-lg border border-white/10 bg-[#212330] p-1">
+                    <a rel="alternate" hreflang="en" href="https://playbase.pro/en" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1fa-1f1f8.png" alt="🇺🇸" class="emoji" draggable="false" />
+                        <span class="ml-2">English</span>
+                    </a>
+                    <a rel="alternate" hreflang="fr" href="https://playbase.pro/fr" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1eb-1f1f7.png" alt="🇫🇷" class="emoji" draggable="false" />
+                        <span class="ml-2">Français</span>
+                    </a>
+                    <a rel="alternate" hreflang="ru" href="https://playbase.pro/ru" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1f7-1f1fa.png" alt="🇷🇺" class="emoji" draggable="false" />
+                        <span class="ml-2">русский</span>
+                    </a>
+                    <a rel="alternate" hreflang="es" href="https://playbase.pro/es" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1ea-1f1f8.png" alt="🇪🇸" class="emoji" draggable="false" />
+                        <span class="ml-2">español</span>
+                    </a>
+                    <a rel="alternate" hreflang="cs" href="https://playbase.pro/cs" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1e8-1f1ff.png" alt="🇨🇿" class="emoji" draggable="false" />
+                        <span class="ml-2">Čeština</span>
+                    </a>
+                    <a rel="alternate" hreflang="de" href="https://playbase.pro/de" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1e9-1f1ea.png" alt="🇩🇪" class="emoji" draggable="false" />
+                        <span class="ml-2">Deutsch</span>
+                    </a>
+                    <a rel="alternate" hreflang="pl" href="https://playbase.pro/pl" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1f5-1f1f1.png" alt="🇵🇱" class="emoji" draggable="false" />
+                        <span class="ml-2">Polski</span>
+                    </a>
+                    <a rel="alternate" hreflang="uk" href="https://playbase.pro/uk" class="flex w-full items-center rounded px-4 py-2 text-sm text-gray-200 transition hover:bg-white/5 focus:bg-gray-600 focus:outline-none">
+                        <img src="https://playbase.pro/storage/emoji/72x72/1f1fa-1f1e6.png" alt="🇺🇦" class="emoji" draggable="false" />
+                        <span class="ml-2">Українська</span>
+                    </a>
+
+                    <hr class="my-1 border-gray-700" />
+
+                    <a
+                        rel="nofollow"
+                        title="crowdin"
+                        href="https://weblate.riko.dev/projects/playbase/"
+                        class="flex w-full items-center justify-center rounded bg-green-700 px-4 py-2 text-sm text-gray-200 transition hover:bg-green-600 hover:bg-white/5 focus:bg-gray-600 focus:bg-green-600 focus:outline-none"
+                    >
+                        Translate in Weblate
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center">
+            <a class="umami--click--login-button rounded-lg bg-blue-700 px-4 py-1 hover:bg-blue-600" href="/login">
+                <span class="font-black text-white">Log In</span>
+            </a>
+        </div>
+    </div>
 </header>
 
 <div class="mx-auto mt-3 flex min-h-screen max-w-7xl gap-5 xl:grid xl:grid-cols-10">
-  <nav class="hidden w-24 sm:flex xl:col-span-2">
-    <div class="fixed flex h-full flex-1 flex-col xl:w-60">
-      <div class="flex flex-1 flex-col">
-        <div class="overflow-hidden rounded-lg focus:outline-none">
-          <a href="/home" class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100"
-            ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-              <path d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-            <div class="hidden flex-none text-lg font-medium xl:inline-flex">Home</div></a
-          >
-        </div>
-        <div class="overflow-hidden rounded-lg focus:outline-none">
-          <a href="/explore" class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100"
-            ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-              <path clip-rule="evenodd" d="M11.097 1.515a.75.75 0 01.589.882L10.666 7.5h4.47l1.079-5.397a.75.75 0 111.47.294L16.665 7.5h3.585a.75.75 0 010 1.5h-3.885l-1.2 6h3.585a.75.75 0 010 1.5h-3.885l-1.08 5.397a.75.75 0 11-1.47-.294l1.02-5.103h-4.47l-1.08 5.397a.75.75 0 01-1.47-.294l1.02-5.103H3.75a.75.75 0 110-1.5h3.885l1.2-6H5.25a.75.75 0 010-1.5h3.885l1.08-5.397a.75.75 0 01.882-.588zM10.365 9l-1.2 6h4.47l1.2-6h-4.47z" fill-rule="evenodd"></path>
-            </svg>
-            <div class="hidden flex-none text-lg font-medium xl:inline-flex">Explore</div></a
-          >
-        </div>
-        <div class="overflow-hidden rounded-lg focus:outline-none">
-          <a href="/notifications" class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100"
-            ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-              <path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-            <div class="hidden flex-none text-lg font-medium xl:inline-flex">Notifications</div></a
-          >
-        </div>
-        <div class="overflow-hidden rounded-lg focus:outline-none">
-          <a href="/messages" class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100"
-            ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-              <path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-            <div class="hidden flex-none text-lg font-medium xl:inline-flex">Messages</div></a
-          >
-        </div>
-        <div class="overflow-hidden rounded-lg focus:outline-none">
-          <a href="/bookmarks" class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100"
-            ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-              <path d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-            <div class="hidden flex-none text-lg font-medium xl:inline-flex">Bookmarks</div></a
-          >
-        </div>
-        <div class="overflow-hidden rounded-lg focus:outline-none">
-          <a href="/profile" class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100"
-            ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-              <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" stroke-linejoin="round" stroke-linecap="round"></path>
-            </svg>
-            <div class="hidden flex-none text-lg font-medium xl:inline-flex">Profile</div></a
-          >
-        </div>
-        <button data-state="closed" aria-controls="radix-:R3b6:" aria-expanded="false" aria-haspopup="dialog" type="button" aria-label="Update dimensions" class="my-1 flex max-w-fit flex-row items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100 focus:outline-none">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-            <path d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-          </svg>
-          <div class="hidden flex-none text-lg font-medium xl:inline-flex">More</div>
-        </button>
-        <div data-state="closed" aria-controls="radix-:R4b6:" aria-expanded="false" aria-haspopup="dialog" type="button" class="mt-5 flex w-full appearance-none justify-center xl:justify-start">
-          <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-3 py-3 text-lg font-bold text-white xl:px-20">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6 xl:hidden" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-              <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" stroke-linejoin="round" stroke-linecap="round"></path></svg
-            ><span class="hidden xl:flex">Tweet</span>
-          </button>
-        </div>
-      </div>
-      <div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-8">
-          <div class="flex flex-1 items-center gap-x-3">
-            <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
-              <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900"><span class="AvatarFallback w-100 h-100 flex items-center justify-center text-base font-semibold leading-none text-white">RQ</span></span>
-            </div>
-            <div class="hidden flex-col xl:flex">
-              <p class="text-base font-semibold">Roy Quilor</p>
-              <p class="text-sm font-medium text-slate-600">@RoyQuilor</p>
-            </div>
-          </div>
-          <div class="hidden xl:flex">
-            <a href="/"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-            ></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <main class="col-span-6 w-full">
-    <div class="TabsRoot" data-orientation="horizontal" dir="ltr">
-      <div style="animation-duration: 0s" class="TabsContent" tabindex="0" id="radix-:Rl6:-content-tab1" aria-labelledby="radix-:Rl6:-trigger-tab1" role="tabpanel" data-orientation="horizontal" data-state="active">
-        <ul class="[&amp;_p:last-child]:text-slate-500 [&amp;_p:first-child]:text-lg divide-y divide-slate-200">
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Jane Doe</span><span class="font-medium text-slate-600">@janedoe</span>·<span class="font-medium text-slate-600">1h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh35l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
+    <nav class="hidden w-24 sm:flex xl:col-span-2">
+        <div class="fixed flex h-full flex-1 flex-col xl:w-60">
+            <div class="flex flex-1 flex-col">
+                <div class="overflow-hidden rounded-lg focus:outline-none">
+                    <a class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100" href="/home">
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                            ></path>
+                        </svg>
+                        <div class="hidden flex-none text-lg font-medium xl:inline-flex">
+                            Home
+                        </div>
+                    </a>
+                </div>
+                <div class="overflow-hidden rounded-lg focus:outline-none">
+                    <a class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100" href="/explore">
+                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                fill-rule="evenodd"
+                                d="M11.097 1.515a.75.75 0 01.589.882L10.666 7.5h4.47l1.079-5.397a.75.75 0 111.47.294L16.665 7.5h3.585a.75.75 0 010 1.5h-3.885l-1.2 6h3.585a.75.75 0 010 1.5h-3.885l-1.08 5.397a.75.75 0 11-1.47-.294l1.02-5.103h-4.47l-1.08 5.397a.75.75 0 01-1.47-.294l1.02-5.103H3.75a.75.75 0 110-1.5h3.885l1.2-6H5.25a.75.75 0 010-1.5h3.885l1.08-5.397a.75.75 0 01.882-.588zM10.365 9l-1.2 6h4.47l1.2-6h-4.47z"
+                                clip-rule="evenodd"
+                            ></path>
+                        </svg>
+                        <div class="hidden flex-none text-lg font-medium xl:inline-flex">
+                            Explore
+                        </div>
+                    </a>
+                </div>
+                <div class="overflow-hidden rounded-lg focus:outline-none">
+                    <a class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100" href="/notifications">
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                            ></path>
+                        </svg>
+                        <div class="hidden flex-none text-lg font-medium xl:inline-flex">
+                            Notifications
+                        </div>
+                    </a>
+                </div>
+                <div class="overflow-hidden rounded-lg focus:outline-none">
+                    <a class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100" href="/messages">
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                            ></path>
+                        </svg>
+                        <div class="hidden flex-none text-lg font-medium xl:inline-flex">
+                            Messages
+                        </div>
+                    </a>
+                </div>
+                <div class="overflow-hidden rounded-lg focus:outline-none">
+                    <a class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100" href="/bookmarks">
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"></path>
+                        </svg>
+                        <div class="hidden flex-none text-lg font-medium xl:inline-flex">
+                            Bookmarks
+                        </div>
+                    </a>
+                </div>
+                <div class="overflow-hidden rounded-lg focus:outline-none">
+                    <a class="my-1 flex max-w-fit items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100" href="/profile">
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
+                        </svg>
+                        <div class="hidden flex-none text-lg font-medium xl:inline-flex">
+                            Profile
+                        </div>
+                    </a>
+                </div>
+                <button
+                    class="my-1 flex max-w-fit flex-row items-center gap-x-4 rounded-full px-4 py-3 text-slate-900 hover:bg-slate-100 focus:outline-none"
+                    aria-label="Update dimensions"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-controls="radix-:R3b6:"
+                    data-state="closed"
+                >
+                    <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        ></path>
+                    </svg>
+                    <div class="hidden flex-none text-lg font-medium xl:inline-flex">
+                        More
+                    </div>
+                </button>
+                <div class="mt-5 flex w-full appearance-none justify-center xl:justify-start" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R4b6:" data-state="closed">
+                    <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-3 py-3 text-lg font-bold text-white xl:px-20">
+                        <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 xl:hidden" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+                            ></path>
+                        </svg>
+                        <span class="hidden xl:flex">Tweet</span>
                     </button>
-                  </div>
                 </div>
-                <div class="mb-4 text-sm text-slate-900">Design and build templates</div>
-                <div class="relative -z-10 mb-4 h-80 w-full">
-                  <img
-                    style="position: absolute;
-                                            height: 100%;
-                                            width: 100%;
-                                            left: 0;
-                                            top: 0;
-                                            right: 0;
-                                            bottom: 0;
-                                            object-fit: cover;
-                                            color: transparent;"
-                    loading="lazy"
-                    class="rounded-3xl"
-                    data-nimg="fill"
-                    decoding="async"
-                    src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=3840&amp;q=75"
-                    srcset="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=3840&amp;q=75 3840w"
-                    sizes="100vw"
-                    alt="Gradient"
-                  />
-                </div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">John Doe</span><span class="font-medium text-slate-600">@johndoe</span>·<span class="font-medium text-slate-600">2h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh55l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
+            <div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-8">
+                    <div class="flex flex-1 items-center gap-x-3">
+                        <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
+                            <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900">
+                                <span class="AvatarFallback w-100 h-100 flex items-center justify-center text-base font-semibold leading-none text-white">RQ</span>
+                            </span>
+                        </div>
+                        <div class="hidden flex-col xl:flex">
+                            <p class="text-base font-semibold">Roy Quilor</p>
+                            <p class="text-sm font-medium text-slate-600">
+                                @RoyQuilor
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hidden xl:flex">
+                        <a href="/">
+                            <svg stroke="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="mb-4 text-sm text-slate-900">I love Figma</div>
-                <div class="relative -z-10 mb-4 h-80 w-full">
-                  <img
-                    style="position: absolute;
-                                            height: 100%;
-                                            width: 100%;
-                                            left: 0;
-                                            top: 0;
-                                            right: 0;
-                                            bottom: 0;
-                                            object-fit: cover;
-                                            color: transparent;"
-                    loading="lazy"
-                    class="rounded-3xl"
-                    data-nimg="fill"
-                    decoding="async"
-                    src="/_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=3840&amp;q=75"
-                    srcset="/_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=640&amp;q=75 640w, /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=750&amp;q=75 750w, /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=828&amp;q=75 828w, /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=1080&amp;q=75 1080w, /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=1200&amp;q=75 1200w, /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=1920&amp;q=75 1920w, /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=2048&amp;q=75 2048w, /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=3840&amp;q=75 3840w"
-                    sizes="100vw"
-                    alt="Gradient"
-                  />
-                </div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Jessica Doe</span><span class="font-medium text-slate-600">@jessicadoe</span>·<span class="font-medium text-slate-600">3h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh75l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="mb-4 text-sm text-slate-900">Tailwind CSS is insane</div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Joe Doe</span><span class="font-medium text-slate-600">@joedoe</span>·<span class="font-medium text-slate-600">4h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh95l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="mb-4 text-sm text-slate-900">Next JS documentation is so good</div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Jill Doe</span><span class="font-medium text-slate-600">@jilldoe</span>·<span class="font-medium text-slate-600">5h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhb5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="mb-4 text-sm text-slate-900">How to use custom fonts with Storybook</div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Jeff Doe</span><span class="font-medium text-slate-600">@jeffdoe</span>·<span class="font-medium text-slate-600">6h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhd5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="mb-4 text-sm text-slate-900">Why use Storybook?</div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Jean Doe</span><span class="font-medium text-slate-600">@jeandoe</span>·<span class="font-medium text-slate-600">7h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhf5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="mb-4 text-sm text-slate-900">Vercel and Netlify are pretty cool</div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Jack Doe</span><span class="font-medium text-slate-600">@jackdoe</span>·<span class="font-medium text-slate-600">8h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhh5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="mb-4 text-sm text-slate-900">Webflow community is awesome</div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
-            <div class="flex flex-1 gap-x-4">
-              <div class="flex flex-1 flex-col">
-                <div class="flex flex-1">
-                  <div class="flex flex-1 gap-x-1 text-sm"><span class="font-bold text-slate-900">Jenny Doe</span><span class="font-medium text-slate-600">@jennydoe</span>·<span class="font-medium text-slate-600">9h</span></div>
-                  <div class="">
-                    <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhj5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-                <div class="mb-4 text-sm text-slate-900">Radix UI is nice to integrate</div>
-                <div>
-                  <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
-                    <li class="">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >20
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >2
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >1
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                        <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-                      >23
-                    </li>
-                    <li>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
-                        <path clip-rule="evenodd" d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" fill-rule="evenodd"></path>
-                      </svg>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="TabsContent" tabindex="0" id="radix-:Rl6:-content-tab2" hidden="" aria-labelledby="radix-:Rl6:-trigger-tab2" role="tabpanel" data-orientation="horizontal" data-state="inactive"></div>
-      <div class="TabsContent" tabindex="0" id="radix-:Rl6:-content-tab3" hidden="" aria-labelledby="radix-:Rl6:-trigger-tab3" role="tabpanel" data-orientation="horizontal" data-state="inactive"></div>
-    </div>
-  </main>
-  <aside class="col-span-2 hidden w-[350px] flex-col xl:flex">
-    <div class="sticky top-0">
-      <div class="mb-3 rounded-xl bg-slate-50">
-        <div class="px-4 py-4">
-          <h2 class="text-xl font-bold leading-none">What's happening</h2>
         </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
-            <p class="text-xs font-medium text-slate-700">Development · Trending</p>
-            <p class="text-sm font-bold text-slate-900">Next JS</p>
-            <p class="text-xs font-medium text-slate-700">57.5K Tweets</p>
-          </div>
-          <div class="">
-            <a href="/"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-            ></a>
-          </div>
-        </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
-            <p class="text-xs font-medium text-slate-700">Design · Trending</p>
-            <p class="text-sm font-bold text-slate-900">Figma</p>
-            <p class="text-xs font-medium text-slate-700">107.5K Tweets</p>
-          </div>
-          <div class="">
-            <a href="/"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-            ></a>
-          </div>
-        </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
-            <p class="text-xs font-medium text-slate-700">Design · Trending</p>
-            <p class="text-sm font-bold text-slate-900">Webflow</p>
-            <p class="text-xs font-medium text-slate-700">127.5K Tweets</p>
-          </div>
-          <div class="">
-            <a href="/"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-            ></a>
-          </div>
-        </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
-            <p class="text-xs font-medium text-slate-700">Development · Trending</p>
-            <p class="text-sm font-bold text-slate-900">Tailwind CSS</p>
-            <p class="text-xs font-medium text-slate-700">87.5K Tweets</p>
-          </div>
-          <div class="">
-            <a href="/"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-            ></a>
-          </div>
-        </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
-            <p class="text-xs font-medium text-slate-700">Development · Trending</p>
-            <p class="text-sm font-bold text-slate-900">Vercel</p>
-            <p class="text-xs font-medium text-slate-700">27.5K Tweets</p>
-          </div>
-          <div class="">
-            <a href="/"
-              ><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
-                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path></svg
-            ></a>
-          </div>
-        </div>
-        <div class="px-4 py-4">
-          <a href="/" class="text-sm font-medium">Show more</a>
-        </div>
-      </div>
-      <div class="mb-3 rounded-xl bg-slate-50">
-        <div class="px-4 py-4">
-          <h2 class="text-xl font-bold leading-none">Who to follow</h2>
-        </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 items-center gap-x-2">
-            <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
-              <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mjd8NzkwMjQ2NTJ8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="Charles Deluvio" class="AvatarImage w-100 h-100 object-cover" /></span>
+    </nav>
+
+    <main class="col-span-6 w-full">
+        <div class="TabsRoot" data-orientation="horizontal" dir="ltr">
+            <div style="animation-duration: 0s;" class="TabsContent" tabindex="0" id="radix-:Rl6:-content-tab1" aria-labelledby="radix-:Rl6:-trigger-tab1" role="tabpanel" data-orientation="horizontal" data-state="active">
+                <ul class="[&amp;_p:last-child]:text-slate-500 [&amp;_p:first-child]:text-lg divide-y divide-slate-200">
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Jane Doe</span><span class="font-medium text-slate-600">@janedoe</span>·<span class="font-medium text-slate-600">1h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh35l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">Design and build templates</div>
+                                <div class="relative -z-10 mb-4 h-80 w-full">
+                                    <img
+                                        style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; object-fit: cover; color: transparent;"
+                                        loading="lazy"
+                                        class="rounded-3xl"
+                                        data-nimg="fill"
+                                        decoding="async"
+                                        src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=3840&amp;q=75"
+                                        srcset="
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=640&amp;q=75   640w,
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=750&amp;q=75   750w,
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=828&amp;q=75   828w,
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=1080&amp;q=75 1080w,
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=1200&amp;q=75 1200w,
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=1920&amp;q=75 1920w,
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=2048&amp;q=75 2048w,
+                                            /_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1635776062127-d379bfcba9f8%3Fixlib%3Drb-4.0.3%26ixid%3DMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8%26auto%3Dformat%26fit%3Dcrop%26w%3D2532%26q%3D80&amp;w=3840&amp;q=75 3840w
+                                        "
+                                        sizes="100vw"
+                                        alt="Gradient"
+                                    />
+                                </div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">John Doe</span><span class="font-medium text-slate-600">@johndoe</span>·<span class="font-medium text-slate-600">2h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh55l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">I love Figma</div>
+                                <div class="relative -z-10 mb-4 h-80 w-full">
+                                    <img
+                                        style="position: absolute; height: 100%; width: 100%; left: 0; top: 0; right: 0; bottom: 0; object-fit: cover; color: transparent;"
+                                        loading="lazy"
+                                        class="rounded-3xl"
+                                        data-nimg="fill"
+                                        decoding="async"
+                                        src="/_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=3840&amp;q=75"
+                                        srcset="
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=640&amp;q=75   640w,
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=750&amp;q=75   750w,
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=828&amp;q=75   828w,
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=1080&amp;q=75 1080w,
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=1200&amp;q=75 1200w,
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=1920&amp;q=75 1920w,
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=2048&amp;q=75 2048w,
+                                            /_next/image?url=https%3A%2F%2Ftopg.org%2Fpremium%2F250624%2F644912_5888.gif&amp;w=3840&amp;q=75 3840w
+                                        "
+                                        sizes="100vw"
+                                        alt="Gradient"
+                                    />
+                                </div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Jessica Doe</span><span class="font-medium text-slate-600">@jessicadoe</span>·<span class="font-medium text-slate-600">3h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh75l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">Tailwind CSS is insane</div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Joe Doe</span><span class="font-medium text-slate-600">@joedoe</span>·<span class="font-medium text-slate-600">4h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rh95l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">Next JS documentation is so good</div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Jill Doe</span><span class="font-medium text-slate-600">@jilldoe</span>·<span class="font-medium text-slate-600">5h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhb5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">How to use custom fonts with Storybook</div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Jeff Doe</span><span class="font-medium text-slate-600">@jeffdoe</span>·<span class="font-medium text-slate-600">6h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhd5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">Why use Storybook?</div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Jean Doe</span><span class="font-medium text-slate-600">@jeandoe</span>·<span class="font-medium text-slate-600">7h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhf5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">Vercel and Netlify are pretty cool</div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Jack Doe</span><span class="font-medium text-slate-600">@jackdoe</span>·<span class="font-medium text-slate-600">8h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhh5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">Webflow community is awesome</div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mb-4 rounded-lg border border-slate-200 bg-white p-4 shadow-2xl">
+                        <div class="flex flex-1 gap-x-4">
+                            <div class="flex flex-1 flex-col">
+                                <div class="flex flex-1">
+                                    <div class="flex flex-1 gap-x-1 text-sm">
+                                        <span class="font-bold text-slate-900">Jenny Doe</span><span class="font-medium text-slate-600">@jennydoe</span>·<span class="font-medium text-slate-600">9h</span>
+                                    </div>
+                                    <div class="">
+                                        <button data-state="closed" aria-expanded="false" aria-haspopup="menu" id="radix-:Rhj5l6:" type="button" aria-label="Customize options" class="IconButton rounded-full hover:bg-slate-200">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-4 text-sm text-slate-900">Radix UI is nice to integrate</div>
+                                <div>
+                                    <ul class="[&amp;_li:first-child]:hidden [&amp;_li:first-child]:lg:flex [&amp;_li]:flex [&amp;_li]:items-center [&amp;_li]:gap-x-2 [&amp;_li:xl]:gap-x-3 flex gap-x-10 text-xs text-slate-700 xl:gap-x-14">
+                                        <li class="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            20
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            2
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M4.5 12c0-1.232.046-2.453.138-3.662a4.006 4.006 0 013.7-3.7 48.678 48.678 0 017.324 0 4.006 4.006 0 013.7 3.7c.017.22.032.441.046.662M4.5 12l-3-3m3 3l3-3m12 3c0 1.232-.046 2.453-.138 3.662a4.006 4.006 0 01-3.7 3.7 48.657 48.657 0 01-7.324 0 4.006 4.006 0 01-3.7-3.7c-.017-.22-.032-.441-.046-.662M19.5 12l-3 3m3-3l3 3"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            1
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                                <path
+                                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                                    stroke-linejoin="round"
+                                                    stroke-linecap="round"
+                                                ></path>
+                                            </svg>
+                                            23
+                                        </li>
+                                        <li>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-5 w-5" aria-hidden="true" viewBox="0 0 24 24" stroke-width="0" fill="currentColor" stroke="currentColor">
+                                                <path
+                                                    clip-rule="evenodd"
+                                                    d="M11.47 2.47a.75.75 0 011.06 0l4.5 4.5a.75.75 0 01-1.06 1.06l-3.22-3.22V16.5a.75.75 0 01-1.5 0V4.81L8.03 8.03a.75.75 0 01-1.06-1.06l4.5-4.5zM3 15.75a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z"
+                                                    fill-rule="evenodd"
+                                                ></path>
+                                            </svg>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <div class="hidden flex-col xl:flex">
-              <p class="text-base font-semibold">Charles Deluvio</p>
-              <p class="text-sm font-medium text-slate-600">@charlesdeluvio</p>
-            </div>
-          </div>
-          <div class="">
-            <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-4 py-1 text-sm font-bold text-white">Follow</button>
-          </div>
+            <div class="TabsContent" tabindex="0" id="radix-:Rl6:-content-tab2" hidden="" aria-labelledby="radix-:Rl6:-trigger-tab2" role="tabpanel" data-orientation="horizontal" data-state="inactive"></div>
+            <div class="TabsContent" tabindex="0" id="radix-:Rl6:-content-tab3" hidden="" aria-labelledby="radix-:Rl6:-trigger-tab3" role="tabpanel" data-orientation="horizontal" data-state="inactive"></div>
         </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 items-center gap-x-2">
-            <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
-              <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900"><img src="https://images.unsplash.com/photo-1613951085587-cfe5d0a6cffc?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTZ8NzkwMjQ2NTJ8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="Tolga Ulkan" class="AvatarImage w-100 h-100 object-cover" /></span>
+    </main>
+    <aside class="col-span-2 hidden w-[350px] flex-col xl:flex">
+        <div class="sticky top-0">
+            <div class="mb-3 rounded-xl bg-slate-50">
+                <div class="px-4 py-4">
+                    <h2 class="text-xl font-bold leading-none">What's happening</h2>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
+                        <p class="text-xs font-medium text-slate-700">Development · Trending</p>
+                        <p class="text-sm font-bold text-slate-900">Next JS</p>
+                        <p class="text-xs font-medium text-slate-700">57.5K Tweets</p>
+                    </div>
+                    <div class="">
+                        <a href="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
+                        <p class="text-xs font-medium text-slate-700">Design · Trending</p>
+                        <p class="text-sm font-bold text-slate-900">Figma</p>
+                        <p class="text-xs font-medium text-slate-700">107.5K Tweets</p>
+                    </div>
+                    <div class="">
+                        <a href="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
+                        <p class="text-xs font-medium text-slate-700">Design · Trending</p>
+                        <p class="text-sm font-bold text-slate-900">Webflow</p>
+                        <p class="text-xs font-medium text-slate-700">127.5K Tweets</p>
+                    </div>
+                    <div class="">
+                        <a href="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
+                        <p class="text-xs font-medium text-slate-700">Development · Trending</p>
+                        <p class="text-sm font-bold text-slate-900">Tailwind CSS</p>
+                        <p class="text-xs font-medium text-slate-700">87.5K Tweets</p>
+                    </div>
+                    <div class="">
+                        <a href="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 flex-col gap-x-2 gap-y-1">
+                        <p class="text-xs font-medium text-slate-700">Development · Trending</p>
+                        <p class="text-sm font-bold text-slate-900">Vercel</p>
+                        <p class="text-xs font-medium text-slate-700">27.5K Tweets</p>
+                    </div>
+                    <div class="">
+                        <a href="/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="h-6 w-6" aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" fill="none" stroke="currentColor">
+                                <path d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="px-4 py-4">
+                    <a href="/" class="text-sm font-medium">Show more</a>
+                </div>
             </div>
-            <div class="hidden flex-col xl:flex">
-              <p class="text-base font-semibold">Tolga Ulkan</p>
-              <p class="text-sm font-medium text-slate-600">@tolgaulkan</p>
+            <div class="mb-3 rounded-xl bg-slate-50">
+                <div class="px-4 py-4">
+                    <h2 class="text-xl font-bold leading-none">Who to follow</h2>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 items-center gap-x-2">
+                        <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
+                            <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900">
+                                <img
+                                    src="https://images.unsplash.com/photo-1517849845537-4d257902454a?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mjd8NzkwMjQ2NTJ8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                                    alt="Charles Deluvio"
+                                    class="AvatarImage w-100 h-100 object-cover"
+                                />
+                            </span>
+                        </div>
+                        <div class="hidden flex-col xl:flex">
+                            <p class="text-base font-semibold">Charles Deluvio</p>
+                            <p class="text-sm font-medium text-slate-600">@charlesdeluvio</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-4 py-1 text-sm font-bold text-white">Follow</button>
+                    </div>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 items-center gap-x-2">
+                        <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
+                            <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900">
+                                <img
+                                    src="https://images.unsplash.com/photo-1613951085587-cfe5d0a6cffc?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTZ8NzkwMjQ2NTJ8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                                    alt="Tolga Ulkan"
+                                    class="AvatarImage w-100 h-100 object-cover"
+                                />
+                            </span>
+                        </div>
+                        <div class="hidden flex-col xl:flex">
+                            <p class="text-base font-semibold">Tolga Ulkan</p>
+                            <p class="text-sm font-medium text-slate-600">@tolgaulkan</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-4 py-1 text-sm font-bold text-white">Follow</button>
+                    </div>
+                </div>
+                <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
+                    <div class="flex flex-1 items-center gap-x-2">
+                        <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
+                            <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900">
+                                <img
+                                    src="https://images.unsplash.com/photo-1614777735430-7b46df56b404?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3OTAyNDY1Mnx8ZW58MHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                                    alt="Rob Potter"
+                                    class="AvatarImage w-100 h-100 object-cover"
+                                />
+                            </span>
+                        </div>
+                        <div class="hidden flex-col xl:flex">
+                            <p class="text-base font-semibold">Rob Potter</p>
+                            <p class="text-sm font-medium text-slate-600">@robpotter</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-4 py-1 text-sm font-bold text-white">Follow</button>
+                    </div>
+                </div>
+                <div class="px-4 py-4">
+                    <a href="/" class="text-sm font-medium">Show more</a>
+                </div>
             </div>
-          </div>
-          <div class="">
-            <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-4 py-1 text-sm font-bold text-white">Follow</button>
-          </div>
+            <div class="mb-3 flex flex-wrap gap-x-3 gap-y-2 px-4 py-4 text-xs text-slate-600">
+                <a href="/" class="">Terms of Service</a><a href="/" class="">Privacy Policy</a><a href="/" class="">Cookie Policy</a><a href="/" class="">Accessibility</a><a href="/" class="">Ads info</a><a href="/" class="">More</a>
+                <div class="">© 2023</div>
+            </div>
         </div>
-        <div class="flex flex-1 items-center gap-x-2 px-4 py-3 hover:bg-slate-200">
-          <div class="flex flex-1 items-center gap-x-2">
-            <div class="flex flex-1 justify-center xl:flex-none xl:justify-start">
-              <span class="AvatarRoot inline-flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-900"><img src="https://images.unsplash.com/photo-1614777735430-7b46df56b404?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXw3OTAyNDY1Mnx8ZW58MHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" alt="Rob Potter" class="AvatarImage w-100 h-100 object-cover" /></span>
-            </div>
-            <div class="hidden flex-col xl:flex">
-              <p class="text-base font-semibold">Rob Potter</p>
-              <p class="text-sm font-medium text-slate-600">@robpotter</p>
-            </div>
-          </div>
-          <div class="">
-            <button class="inline-flex items-center rounded-full border border-transparent bg-slate-900 px-4 py-1 text-sm font-bold text-white">Follow</button>
-          </div>
-        </div>
-        <div class="px-4 py-4">
-          <a href="/" class="text-sm font-medium">Show more</a>
-        </div>
-      </div>
-      <div class="mb-3 flex flex-wrap gap-x-3 gap-y-2 px-4 py-4 text-xs text-slate-600">
-        <a href="/" class="">Terms of Service</a><a href="/" class="">Privacy Policy</a><a href="/" class="">Cookie Policy</a><a href="/" class="">Accessibility</a><a href="/" class="">Ads info</a><a href="/" class="">More</a>
-        <div class="">© 2023</div>
-      </div>
-    </div>
-  </aside>
+    </aside>
 </div>
